@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 //绑定該接口到CalculatorServer服务，并通知Feign组件对该接口进行代理（不需要编写接口实现）
-@FeignClient(value="CalculatorServer")
+@FeignClient(value="CalculatorServer", fallback=HystrixCalculatorService.class)
 interface CalculatorService {
     ////@PathVariable這種也是支持的
     //@RequestMapping(value="/add/{a}", method=RequestMethod.GET)
