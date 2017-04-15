@@ -2,11 +2,15 @@ package com.jadyer.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+//@SpringCloudApplication
+//开启断路器功能
+@EnableCircuitBreaker
 @EnableEurekaClient
 @SpringBootApplication
 public class ServiceClient01BootStarp {
